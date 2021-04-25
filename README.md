@@ -12,5 +12,5 @@ Builder image for [Microsoft CSS Japan](https://aka.ms/JSupport) blog pages.
 
 ## Examples
 
-* [Example CSS Blog](./example)
+* [Example CSS Blog](https://github.com/cssjpn/blog-example/)
 

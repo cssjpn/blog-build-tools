@@ -8,31 +8,33 @@ If you don't have a membership of the repo, please fork the repository and creat
 
 ### 2. Create new Release
 
-To build a new container image, create new [Release](https://github.com/cssjpn/blog-build-tools/releases). When new release is created, the automated job builds new image and uploads to [GHCR](https://github.com/orgs/cssjpn/packages/container/package/blog-build-tools).
+To build a new container image, create new [Release](https://github.com/cssjpn/blog-build-tools/releases).
+When new release is created, the automated job builds and uploads new image to [GHCR](https://github.com/orgs/cssjpn/packages/container/package/blog-build-tools).
 
 https://github.com/cssjpn/blog-build-tools/blob/main/.github/workflows/release-build-tools.yml
 
 ## Manual Testing
 
-Example blog site is available in [`example`](../example) directory.
+Example blog site is available in [cssjpn/blog-example](https://github.com/cssjpn/blog-example) repository.
 
 To build images locally, run `docker` command as follows:
 
 ```shell
-$ docker build -t blog-build-tools:test .
+$ docker build -t blog-build-tools:local-test .
   ...
 Successfully built e25a0e41bfa3
-Successfully tagged blog-build-tools:test
+Successfully tagged blog-build-tools:local-test
 ```
 
-By default, [`docker-compose.yaml`](../example/docker-compose.yaml) refer to a GHCR image. Modify to a local image and run `docker-compose`.
+By default, [docker-compose.yaml](https://github.com/cssjpn/blog-example/blob/main/docker-compose.yaml) refer to a GHCR image.
+Modify to a local image and run `docker-compose`.
 
 ```diff
  version: '3'
  services:
    blog:
 -    image: ghcr.io/cssjpn/blog-build-tools:latest
-+    image: blog-build-tools:test
++    image: blog-build-tools:local-test
      working_dir: /blog
      command: ["npm", "start"]
 ```
