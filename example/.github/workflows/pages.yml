@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: docker://ghcr.io/jpaztech/blog-build-tools:latest
+      image: docker://ghcr.io/cssjpn/blog-build-tools:latest
 
     steps:
       - uses: actions/checkout@v2

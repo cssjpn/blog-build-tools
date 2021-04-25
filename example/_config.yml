@@ -23,9 +23,9 @@ root_tag_generator:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://jpaztech.github.io/example-blog/
+url: https://cssjpn.github.io/example-blog/
 github:
-  url: https://github.com/jpaztech/example-blog/
+  url: https://github.com/cssjpn/blog-example/
   posts_dir: articles
 
 skip_render:
@@ -39,7 +39,7 @@ skip_render:
 ## Docs: https://hexo.io/doc  s/deployment.html
 deploy:
   type: git
-  repo: git@github.com:jpaztech/example-blog.git
+  repo: git@github.com:cssjpn/blog-example.git
   branch: gh-pages
   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }} [skip ci]"
 

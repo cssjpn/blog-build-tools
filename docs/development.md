@@ -8,9 +8,9 @@ If you don't have a membership of the repo, please fork the repository and creat
 
 ### 2. Create new Release
 
-To build a new container image, create new [Release](https://github.com/jpaztech/blog-build-tools/releases). When new release is created, the automated job builds new image and uploads to [GHCR](https://github.com/orgs/jpaztech/packages/container/package/blog-build-tools).
+To build a new container image, create new [Release](https://github.com/cssjpn/blog-build-tools/releases). When new release is created, the automated job builds new image and uploads to [GHCR](https://github.com/orgs/cssjpn/packages/container/package/blog-build-tools).
 
-https://github.com/jpaztech/blog-build-tools/blob/main/.github/workflows/release-build-tools.yml
+https://github.com/cssjpn/blog-build-tools/blob/main/.github/workflows/release-build-tools.yml
 
 ## Manual Testing
 
@@ -31,7 +31,7 @@ By default, [`docker-compose.yaml`](../example/docker-compose.yaml) refer to a G
  version: '3'
  services:
    blog:
--    image: ghcr.io/jpaztech/blog-build-tools:latest
+-    image: ghcr.io/cssjpn/blog-build-tools:latest
 +    image: blog-build-tools:test
      working_dir: /blog
      command: ["npm", "start"]

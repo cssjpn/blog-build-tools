@@ -32,10 +32,10 @@ $ docker-compose
 
 ### Get sample project
 
-Clone [jpaztech/blog-build-tools](https://github.com/jpaztech/blog-build-tools) repository and copy example blog directory.
+Clone [cssjpn/blog-build-tools](https://github.com/cssjpn/blog-build-tools) repository and copy example blog directory.
 
 ```shell
-$ git clone https://github.com/jpaztech/blog-build-tools.git
+$ git clone https://github.com/cssjpn/blog-build-tools.git
 $ cp -r blog-build-tools/example {YOUR_WORKING_DIR}/blog
 ```
 
