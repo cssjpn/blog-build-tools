@@ -1,0 +1,34 @@
+name: Run tests
+
+on:
+  pull_request
+
+jobs:
+  build-and-test:
+    if:
+      github.event_name == 'pull_request' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    env:
+      IMAGE_TAG: ${{ github.repository }}:${{ github.event.pull_request.head.sha }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: build image
+        run: |
+          docker build . -t ${{ env.IMAGE_TAG }}
+          docker images
+
+      - name: checkout blog example
+        uses: actions/checkout@v2
+        with:
+          repository: cssjpn/blog-example
+          submodules: true
+
+      - name: replace workdir and image
+        run: |
+          sed -i -e 's@/blog@/workdir@' docker-compose.yaml
+          sed -i -e 's@image: .*@image: ${{ env.IMAGE_TAG }}@' docker-compose.yaml
+          cat docker-compose.yaml
+
+      - run: docker-compose run blog npm run build
