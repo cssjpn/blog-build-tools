@@ -24,17 +24,6 @@ Successfully built e25a0e41bfa3
 Successfully tagged blog-build-tools:local-test
 ```
 
-You can enter to shell or run specific commands manually.
-
-```shell
-# Run bash
-% docker-compose run blog bash
-root@c423d8db1c46:/blog#
-
-# Run 'npm test'
-% docker-compose run blog npm test
-```
-
 Example blog site is available in [cssjpn/blog-example](https://github.com/cssjpn/blog-example) repository.
 
 By default, [docker-compose.yaml](https://github.com/cssjpn/blog-example/blob/main/docker-compose.yaml) refer to a GHCR image.
@@ -63,4 +52,15 @@ vim docker-compose.yaml
 
 # run build-tools
 docker-compose up
+```
+
+You can enter to shell or run specific commands manually.
+
+```shell
+# Run bash
+% docker-compose run blog bash
+root@c423d8db1c46:/blog#
+
+# Run 'npm test'
+% docker-compose run blog npm test
 ```
