@@ -15,8 +15,6 @@ https://github.com/cssjpn/blog-build-tools/blob/main/.github/workflows/release-b
 
 ## Manual Testing
 
-Example blog site is available in [cssjpn/blog-example](https://github.com/cssjpn/blog-example) repository.
-
 To build images locally, run `docker` command as follows:
 
 ```shell
@@ -25,6 +23,8 @@ $ docker build -t blog-build-tools:local-test .
 Successfully built e25a0e41bfa3
 Successfully tagged blog-build-tools:local-test
 ```
+
+Example blog site is available in [cssjpn/blog-example](https://github.com/cssjpn/blog-example) repository.
 
 By default, [docker-compose.yaml](https://github.com/cssjpn/blog-example/blob/main/docker-compose.yaml) refer to a GHCR image.
 Modify to a local image and run `docker-compose`.
@@ -40,12 +40,27 @@ Modify to a local image and run `docker-compose`.
 ```
 
 ```shell
-$ docker-compose up
+# clone blog-example
+git clone git@github.com:cssjpn/blog-example.git
+cd blog-example
+
+# initialize git submodule
+git submodule update -i
+
+# Modify image to 'blog-build-tools:local-test'
+vim docker-compose.yaml
+
+# run build-tools
+docker-compose up
 ```
 
-If you need to run commands manually, you can enter to shell by following command.
+You can enter to shell or run specific commands manually.
 
 ```shell
+# Run bash
 % docker-compose run blog bash
 root@c423d8db1c46:/blog#
+
+# Run 'npm test'
+% docker-compose run blog npm test
 ```
