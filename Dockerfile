@@ -8,6 +8,7 @@ WORKDIR /blog
 ADD entrypoint.sh /
 ADD package*.json /blog/
 ADD gulpfile.js /blog/
+ADD lib/ /blog/lib/
 
 RUN npm install
 
