@@ -1,0 +1,23 @@
+{
+  "name": "hexo-alert",
+  "version": "0.0.3",
+  "description": "hexo plugin for generating alert block, MS docs flavor (ja)",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpazureid/hexo-alert.git"
+  },
+  "keywords": [
+    "hexo"
+  ],
+  "author": "wahaniya@microsoft.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpazureid/hexo-alert/issues"
+  },
+  "homepage": "https://github.com/jpazureid/hexo-alert#readme",
+  "dependencies": {}
+}
