@@ -31,6 +31,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ${DOCKER_BASE_NAME}:${GITHUB_SHA::8}
-            ${DOCKER_BASE_NAME}:${{ github.event.release.tag_name }}
-            ${DOCKER_BASE_NAME}:latest
+            ${{ env.DOCKER_BASE_NAME }}:${{ github.event.release.tag_name }}
+            ${{ env.DOCKER_BASE_NAME }}:latest
