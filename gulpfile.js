@@ -177,7 +177,7 @@ const copyMarkdown = () => {
 };
 
 const copyAttachments = () => {
-  return src(attachments, { base: sourceFolder, since: lastRun(copyAttachments) }).pipe(dest(outputPath));
+  return src(attachments, { base: sourceFolder, since: lastRun(copyAttachments), encoding: false }).pipe(dest(outputPath));
 };
 
 // TODO copy only changed files
