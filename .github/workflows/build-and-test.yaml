@@ -31,4 +31,4 @@ jobs:
           sed -i -e 's@image: .*@image: ${{ env.IMAGE_TAG }}@' docker-compose.yaml
           cat docker-compose.yaml
 
-      - run: docker-compose run blog npm run build
+      - run: docker compose run blog npm run build
